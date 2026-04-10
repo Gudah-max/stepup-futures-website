@@ -10,15 +10,18 @@ import { Button, SectionHeading } from '../components/shared';
 // ── Hero ──────────────────────────────────────────────────────────────────────
 const Hero = () => (
   <section className="relative min-h-screen flex items-center pt-20 overflow-hidden bg-navy" aria-label="Hero">
-    <div className="absolute inset-0 overflow-hidden">
-      <div className="absolute -top-[20%] -right-[10%] w-[70%] h-[70%] rounded-full bg-orange/10 blur-[120px]" />
-      <div className="absolute bottom-[10%] -left-[10%] w-[50%] h-[50%] rounded-full bg-blue-500/10 blur-[100px]" />
-      <svg className="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-        <defs><pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M 40 0 L 0 0 0 40" fill="none" stroke="currentColor" strokeWidth="0.5" className="text-white/20" /></pattern></defs>
-        <rect width="100%" height="100%" fill="url(#grid)" />
-        <motion.path initial={{ pathLength: 0, opacity: 0 }} animate={{ pathLength: 1, opacity: 1 }} transition={{ duration: 2, ease: "easeInOut" }}
-          d="M -100 800 Q 300 600 500 300 T 1200 -100" fill="none" stroke="var(--color-orange)" strokeWidth="2" strokeDasharray="10 10" />
-      </svg>
+    <div className="absolute inset-0">
+      {/* Background photo */}
+      <img
+        src="/hero-bg.jpeg"
+        alt=""
+        aria-hidden="true"
+        className="w-full h-full object-cover object-center"
+      />
+      {/* Navy tint overlay — preserves text legibility */}
+      <div className="absolute inset-0 bg-navy/70" />
+      {/* Subtle orange gradient bottom-left for brand warmth */}
+      <div className="absolute inset-0 bg-gradient-to-tr from-navy/60 via-transparent to-orange/10" />
     </div>
     <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10 py-20">
       <div className="max-w-3xl">
