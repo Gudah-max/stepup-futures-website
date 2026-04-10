@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+Disallow: /admin/
+Disallow: /api/
+Disallow: /.netlify/
+
+Sitemap: https://www.stepupfutures.org/sitemap.xml
