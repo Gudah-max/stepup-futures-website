@@ -127,28 +127,31 @@ export default function ResumeToolPage() {
   return (
     <>
     <Helmet>
-      <title>Free AI CV Optimiser | StepUp Futures CIC</title>
-      <meta name="description" content="Upload your CV and get instant AI-powered feedback — ATS scoring, skill gap analysis, a full rewrite, and job match analysis. Free, no login required, built for UK jobs." />
-      <meta property="og:title" content="Free AI CV Optimiser | StepUp Futures CIC" />
-      <meta property="og:description" content="Free AI CV analysis tool for UK job seekers. ATS score, rewrite, job match — no login needed." />
+      <title>AI CV Optimiser (Coming Soon) | StepUp Futures CIC</title>
+      <meta name="description" content="StepUp Futures CIC is building a free AI-powered CV optimiser for UK job seekers — ATS scoring, skill gap analysis, rewrite, and job match. Coming soon." />
+      <meta property="og:title" content="AI CV Optimiser (Coming Soon) | StepUp Futures CIC" />
+      <meta property="og:description" content="Free AI CV tool for UK job seekers — coming soon from StepUp Futures CIC." />
       <link rel="canonical" href="https://www.stepupfutures.org/resume-tool" />
     </Helmet>
 
     {/* ── LANDING HERO ── */}
     <section className="bg-navy pt-32 pb-16 px-4 text-center">
       <div className="max-w-3xl mx-auto">
-        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
-          className="text-xs font-bold tracking-widest uppercase text-orange mb-4">Free Tool · No Login Required</motion.p>
+        <motion.div initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+          className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/15 border border-orange/30 text-orange text-xs font-bold uppercase tracking-widest mb-6">
+          <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
+          Coming Soon · Free Tool
+        </motion.div>
         <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }}
-          className="text-4xl md:text-5xl font-bold text-white font-heading mb-5">Get your CV noticed.</motion.h1>
+          className="text-4xl md:text-5xl font-bold text-white font-heading mb-5">AI CV Optimiser — launching soon.</motion.h1>
         <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.16 }}
           className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
-          Our free AI tool analyses your CV in seconds — finding gaps, boosting your language, and helping you beat ATS filters used by UK employers.
+          We're building a free AI-powered CV tool for UK job seekers — analysing your CV for ATS compatibility, language impact, and keyword gaps. Preview the demo below.
         </motion.p>
         <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
           className="flex flex-wrap justify-center gap-3">
           {['Free to use', 'No login required', 'Built for UK jobs'].map(badge => (
-            <span key={badge} className="flex items-center gap-1.5 px-4 py-2 bg-green-500/15 border border-green-500/30 text-green-300 text-sm font-medium rounded-full">
+            <span key={badge} className="flex items-center gap-1.5 px-4 py-2 bg-white/8 border border-white/15 text-white/50 text-sm font-medium rounded-full">
               <CheckCircle2 className="w-3.5 h-3.5" /> {badge}
             </span>
           ))}
@@ -159,7 +162,8 @@ export default function ResumeToolPage() {
     {/* ── HOW IT WORKS ── */}
     <section className="py-16 px-4" style={{ backgroundColor: '#0a2035' }}>
       <div className="max-w-4xl mx-auto">
-        <p className="text-center text-xs font-bold tracking-widest uppercase text-orange mb-10">How it works</p>
+        <p className="text-center text-xs font-bold tracking-widest uppercase text-orange mb-2">How it will work</p>
+        <p className="text-center text-white/40 text-sm mb-10">When the tool launches, here's how easy it'll be to use:</p>
         <div className="grid md:grid-cols-3 gap-6">
           {[
             { icon: <Upload className="w-6 h-6" />, step: '1', title: 'Upload your CV', desc: 'Drag & drop or browse your PDF or Word file. Max 10MB.' },
@@ -168,7 +172,7 @@ export default function ResumeToolPage() {
           ].map((item, i) => (
             <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
               transition={{ delay: i * 0.1 }}
-              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center opacity-75">
               <div className="w-12 h-12 rounded-xl bg-orange/20 flex items-center justify-center text-orange mx-auto mb-4">{item.icon}</div>
               <p className="text-orange text-xs font-bold mb-2">Step {item.step}</p>
               <h3 className="text-white font-semibold text-base mb-2">{item.title}</h3>
@@ -197,7 +201,7 @@ export default function ResumeToolPage() {
             className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-orange/15 border border-orange/30 text-orange text-sm font-medium mb-6"
           >
             <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
-            AI-Powered Tool · Free to Use
+            Key Innovation · Demo Preview
           </motion.div>
 
           <motion.h1
@@ -216,7 +220,7 @@ export default function ResumeToolPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-white/60 text-lg md:text-xl max-w-2xl mx-auto mb-8"
           >
-            Upload your CV and get instant AI-powered feedback — ATS scoring, improvement suggestions, a full rewrite, and job match analysis.
+            This is a demo of the tool we're building. Try it out below — the full version launches soon, completely free for UK job seekers.
           </motion.p>
 
           <motion.div
@@ -489,11 +493,11 @@ export default function ResumeToolPage() {
         <h2 className="text-center text-2xl md:text-3xl font-bold text-navy font-heading mb-10">Common questions</h2>
         <div className="space-y-3">
           {[
-            { q: 'Is this tool really free?', a: 'Yes, completely free. No hidden costs, no premium tiers. StepUp Futures CIC is a Community Interest Company — we reinvest everything back into helping young people.' },
-            { q: 'What file types can I upload?', a: 'We accept PDF and DOCX files up to 10MB. These are the two most common CV formats and cover 99% of cases.' },
-            { q: 'Will this work for UK jobs?', a: 'Yes. The tool is specifically calibrated for the UK job market — using UK ATS patterns, employer expectations, and industry-standard CV formatting guidelines.' },
-            { q: 'Does my CV get stored anywhere?', a: 'No. Your CV is processed in your browser session only. We do not store, share, or retain any CV data after your session ends.' },
-            { q: 'Can I use this more than once?', a: 'Yes — unlimited uses. Upload a new version of your CV at any time and run the analysis again to track your improvements.' },
+            { q: 'When will this tool be available?', a: 'We\'re currently in the demo phase and are actively developing the full version. Sign up to our newsletter on the homepage to be the first to know when it launches.' },
+            { q: 'Will it really be free?', a: 'Yes, completely free at the point of use. StepUp Futures CIC is a Community Interest Company — we reinvest everything back into helping young people. The AI CV tool is part of that commitment.' },
+            { q: 'What file types will I be able to upload?', a: 'The full tool will accept PDF and DOCX files up to 10MB — the two most common CV formats, covering 99% of cases.' },
+            { q: 'Will this work for UK jobs?', a: 'Yes. The tool is being built specifically for the UK job market — using UK ATS patterns, employer expectations, and industry-standard CV formatting guidelines.' },
+            { q: 'Will my CV be stored anywhere?', a: 'No. When the tool launches, your CV will be processed in your session only. We will not store, share, or retain any CV data after your session ends.' },
           ].map((item, i) => (
             <FAQItem key={i} question={item.q} answer={item.a} />
           ))}
@@ -507,15 +511,15 @@ export default function ResumeToolPage() {
         <div className="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center text-orange mx-auto mb-5">
           <CheckCircle2 className="w-6 h-6" />
         </div>
-        <h2 className="text-2xl md:text-3xl font-bold text-navy font-heading mb-3">Want a human to review your CV too?</h2>
+        <h2 className="text-2xl md:text-3xl font-bold text-navy font-heading mb-3">Want a real careers expert to review your CV?</h2>
         <p className="text-navy/60 text-base leading-relaxed mb-7 max-w-lg mx-auto">
-          Our careers advisers at StepUp Futures can give you personalised feedback, coach you through applications, and help you land your next role — all for free.
+          While the AI tool is in development, our careers advisers at StepUp Futures are available now. Book a session and get personalised, expert feedback on your CV and job applications.
         </p>
         <Link
           to="/programmes"
           className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-orange/90 transition-colors"
         >
-          Book a free session <ArrowRight className="w-4 h-4" />
+          Book a session <ArrowRight className="w-4 h-4" />
         </Link>
       </div>
     </section>

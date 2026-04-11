@@ -72,6 +72,13 @@ const aboutLinks = [
   { label: 'Meet the Team', to: '/about#team' },
   { label: 'Our Partners', to: '/about#partners' },
 ];
+const serviceLinks = [
+  { label: 'Careers Workshops & Assemblies', to: '/#services' },
+  { label: 'Employability Skills Training', to: '/#services' },
+  { label: 'Apprenticeship & University Guidance', to: '/#services' },
+  { label: 'School & College Partnerships', to: '/#services' },
+  { label: 'Personalised Career Coaching', to: '/#services' },
+];
 const programmeLinks = [
   { label: 'Step-Up to A Levels', to: '/programmes#alevels' },
   { label: 'Step-Up to College', to: '/programmes#college' },
@@ -83,7 +90,7 @@ const moreLinks = [
   { label: 'Our Impact', to: '/impact' },
   { label: 'Blog', to: '/blog' },
   { label: 'News', to: '/news' },
-  { label: 'Free AI CV Tool', to: '/resume-tool' },
+  { label: 'AI CV Tool (Coming Soon)', to: '/resume-tool' },
 ];
 
 function DesktopDropdown({ label, links }: { label: string; links: { label: string; to: string }[] }) {
@@ -180,6 +187,7 @@ export function Navbar() {
                 Home
               </Link>
               <DesktopDropdown label="About Us" links={aboutLinks} />
+              <DesktopDropdown label="Services" links={serviceLinks} />
               <DesktopDropdown label="Our Programmes" links={programmeLinks} />
               <DesktopDropdown label="More" links={moreLinks} />
             </div>
@@ -225,6 +233,7 @@ export function Navbar() {
               <nav className="p-5 space-y-1">
                 <MobileNavLink to="/" label="Home" />
                 <MobileSection label="About Us" links={aboutLinks} />
+                <MobileSection label="Services" links={serviceLinks} />
                 <MobileSection label="Our Programmes" links={programmeLinks} />
                 <MobileSection label="More" links={moreLinks} />
               </nav>

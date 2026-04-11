@@ -205,7 +205,7 @@ function Services() {
         <SectionHeading
           eyebrow="What We Do"
           title="Services built around young people"
-          subtitle="Every service we offer is free at the point of delivery and designed to meet young people where they are."
+          subtitle="Evidence-based, Gatsby Benchmark-aligned programmes delivered in schools, colleges, and community settings across the West Midlands."
           centered
         />
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-12">
@@ -250,7 +250,7 @@ function ProgrammesTeaser() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-4 mb-12">
           <div>
-            <p className="text-xs font-bold tracking-widest uppercase text-orange mb-2">All Free · 5 Pathways</p>
+            <p className="text-xs font-bold tracking-widest uppercase text-orange mb-2">5 Pathways · Structured Programmes</p>
             <h2 className="text-3xl md:text-4xl font-bold text-white font-heading">Find your next step.</h2>
           </div>
           <Button to="/programmes" variant="outline" className="self-start md:self-auto text-sm px-5 py-2.5">
@@ -302,20 +302,23 @@ function AIFeature() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
-            <p className="text-xs font-bold tracking-widest uppercase text-orange mb-3">Free Tool</p>
-            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-5">Get your CV noticed.</h2>
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-orange/10 border border-orange/20 text-orange text-xs font-bold uppercase tracking-widest mb-4">
+              <span className="w-2 h-2 rounded-full bg-orange animate-pulse" />
+              Coming Soon
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-navy font-heading mb-5">AI CV Optimiser — launching soon.</h2>
             <p className="text-navy/70 leading-relaxed mb-6">
-              Our free AI CV Optimiser analyses your CV in seconds — finding gaps, boosting your language, and helping you beat ATS filters used by UK employers.
+              We're building a free AI-powered CV tool designed specifically for UK job seekers — analysing your CV for ATS compatibility, language impact, and keyword gaps in seconds.
             </p>
             <div className="flex flex-wrap gap-3 mb-8">
               {['Free to use', 'No login required', 'Built for UK jobs'].map(badge => (
-                <span key={badge} className="flex items-center gap-1.5 px-3 py-1.5 bg-green-50 border border-green-200 text-green-700 text-xs font-medium rounded-full">
+                <span key={badge} className="flex items-center gap-1.5 px-3 py-1.5 bg-navy/5 border border-navy/10 text-navy/50 text-xs font-medium rounded-full">
                   <CheckCircle2 className="w-3.5 h-3.5" /> {badge}
                 </span>
               ))}
             </div>
             <Button to="/resume-tool" variant="primary" className="text-base">
-              Try the AI CV Tool <ArrowRight className="w-4 h-4" />
+              See a preview <ArrowRight className="w-4 h-4" />
             </Button>
           </motion.div>
           <motion.div
