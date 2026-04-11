@@ -63,6 +63,7 @@ const programmes: Programme[] = [
     desc: 'Explore FE college options and get help with your application.',
     bullets: ['College and course exploration', 'Application and funding guidance', 'Interview and enrolment support'],
     eligibility: 'Year 11–12 · Ages 15–17',
+    img: '/programme-college.jpeg',
     whoFor: 'Year 10–11 students and 16–18 learners exploring vocational pathways.',
     purpose: 'To increase awareness of vocational routes and support successful college applications.',
     delivers: [
