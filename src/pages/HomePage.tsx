@@ -551,9 +551,9 @@ function Newsletter() {
               name="email"
               required
               placeholder="Your email address"
-              className="flex-1 px-4 py-3 rounded-lg text-navy text-sm focus:outline-none focus:ring-2 focus:ring-white"
+              className="flex-1 px-4 py-3 rounded-lg bg-white text-navy text-sm placeholder-navy/40 border-2 border-white focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-orange shadow-sm"
             />
-            <button type="submit" className="px-6 py-3 bg-navy text-white font-semibold rounded-lg hover:bg-navy/90 transition-colors text-sm whitespace-nowrap">
+            <button type="submit" className="px-6 py-3 bg-navy text-white font-semibold rounded-lg hover:bg-navy/90 transition-colors text-sm whitespace-nowrap shadow-sm">
               Subscribe
             </button>
           </form>
