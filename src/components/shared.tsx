@@ -172,7 +172,7 @@ export function Navbar() {
             {/* Logo */}
             <Link to="/" className="flex-shrink-0 focus-visible:ring-2 focus-visible:ring-orange rounded outline-none">
               <img
-                src="/logo.png"
+                src="/logo-header.jpeg"
                 alt="StepUp Futures CIC"
                 className="h-12 w-auto object-contain"
                 style={{ mixBlendMode: 'multiply' }}
@@ -226,7 +226,7 @@ export function Navbar() {
               className="fixed top-0 right-0 h-full w-80 bg-navy z-50 md:hidden overflow-y-auto"
             >
               <div className="flex items-center justify-between p-5 border-b border-white/10">
-                <img src="/logo.png" alt="StepUp Futures CIC" className="h-10 w-auto brightness-0 invert" />
+                <img src="/logo-footer.png" alt="StepUp Futures CIC" className="h-10 w-auto object-contain" />
                 <button onClick={() => setMobileOpen(false)} className="text-white/70 hover:text-white p-1" aria-label="Close menu">
                   <X className="w-6 h-6" />
                 </button>
@@ -324,7 +324,7 @@ export function Footer() {
         {/* Row 1: Logo + tagline + socials */}
         <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-6 pb-10 border-b border-white/10">
           <div className="max-w-xs">
-            <img src="/logo.png" alt="StepUp Futures CIC" className="h-11 w-auto brightness-0 invert mb-4" />
+            <img src="/logo-footer.png" alt="StepUp Futures CIC" className="h-11 w-auto object-contain mb-4" />
             <p className="text-white/60 text-sm leading-relaxed">
               Empowering young people across the West Midlands through free careers education, employability programmes, and skills development.
             </p>
