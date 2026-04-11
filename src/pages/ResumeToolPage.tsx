@@ -1,5 +1,8 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
+import { Link } from 'react-router-dom';
 import { motion, AnimatePresence } from 'motion/react';
+import { CheckCircle2, Upload, Cpu, Download, ArrowRight, ChevronDown } from 'lucide-react';
 import UploadBox from '../components/resume/UploadBox';
 import ScoreCard from '../components/resume/ScoreCard';
 import ProgressBar from '../components/resume/ProgressBar';
@@ -9,6 +12,36 @@ import JobMatch from '../components/resume/JobMatch';
 import { analyzeResume, rewriteResume, matchJob, downloadAsText, type AnalysisResult, type MatchResult } from '../lib/resumeApi';
 
 type Step = 'idle' | 'analyzing' | 'results';
+
+function FAQItem({ question, answer }: { question: string; answer: string }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className="bg-white rounded-xl border border-navy/8 overflow-hidden">
+      <button
+        onClick={() => setOpen(o => !o)}
+        className="w-full flex items-center justify-between px-6 py-4 text-left text-navy font-semibold text-sm hover:bg-navy/2 transition-colors"
+        aria-expanded={open}
+      >
+        {question}
+        <ChevronDown className={`w-4 h-4 text-orange flex-shrink-0 transition-transform duration-300 ${open ? 'rotate-180' : ''}`} />
+      </button>
+      <AnimatePresence initial={false}>
+        {open && (
+          <motion.div
+            key="content"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: [0.16, 1, 0.3, 1] }}
+            className="overflow-hidden"
+          >
+            <p className="px-6 pb-5 pt-1 text-navy/60 text-sm leading-relaxed">{answer}</p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  );
+}
 
 /* ─── Icon helpers ─── */
 const IconScore = () => (
@@ -92,6 +125,60 @@ export default function ResumeToolPage() {
   };
 
   return (
+    <>
+    <Helmet>
+      <title>Free AI CV Optimiser | StepUp Futures CIC</title>
+      <meta name="description" content="Upload your CV and get instant AI-powered feedback — ATS scoring, skill gap analysis, a full rewrite, and job match analysis. Free, no login required, built for UK jobs." />
+      <meta property="og:title" content="Free AI CV Optimiser | StepUp Futures CIC" />
+      <meta property="og:description" content="Free AI CV analysis tool for UK job seekers. ATS score, rewrite, job match — no login needed." />
+      <link rel="canonical" href="https://www.stepupfutures.org/resume-tool" />
+    </Helmet>
+
+    {/* ── LANDING HERO ── */}
+    <section className="bg-navy pt-32 pb-16 px-4 text-center">
+      <div className="max-w-3xl mx-auto">
+        <motion.p initial={{ opacity: 0, y: 16 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}
+          className="text-xs font-bold tracking-widest uppercase text-orange mb-4">Free Tool · No Login Required</motion.p>
+        <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.08 }}
+          className="text-4xl md:text-5xl font-bold text-white font-heading mb-5">Get your CV noticed.</motion.h1>
+        <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5, delay: 0.16 }}
+          className="text-white/70 text-lg leading-relaxed mb-8 max-w-xl mx-auto">
+          Our free AI tool analyses your CV in seconds — finding gaps, boosting your language, and helping you beat ATS filters used by UK employers.
+        </motion.p>
+        <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 0.3 }}
+          className="flex flex-wrap justify-center gap-3">
+          {['Free to use', 'No login required', 'Built for UK jobs'].map(badge => (
+            <span key={badge} className="flex items-center gap-1.5 px-4 py-2 bg-green-500/15 border border-green-500/30 text-green-300 text-sm font-medium rounded-full">
+              <CheckCircle2 className="w-3.5 h-3.5" /> {badge}
+            </span>
+          ))}
+        </motion.div>
+      </div>
+    </section>
+
+    {/* ── HOW IT WORKS ── */}
+    <section className="py-16 px-4" style={{ backgroundColor: '#0a2035' }}>
+      <div className="max-w-4xl mx-auto">
+        <p className="text-center text-xs font-bold tracking-widest uppercase text-orange mb-10">How it works</p>
+        <div className="grid md:grid-cols-3 gap-6">
+          {[
+            { icon: <Upload className="w-6 h-6" />, step: '1', title: 'Upload your CV', desc: 'Drag & drop or browse your PDF or Word file. Max 10MB.' },
+            { icon: <Cpu className="w-6 h-6" />, step: '2', title: 'AI analyses it instantly', desc: 'Our AI scores your CV on ATS compatibility, impact, clarity, and keywords.' },
+            { icon: <Download className="w-6 h-6" />, step: '3', title: 'Download your improved version', desc: 'Get a fully rewritten CV and detailed suggestions. Download in seconds.' },
+          ].map((item, i) => (
+            <motion.div key={i} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
+              transition={{ delay: i * 0.1 }}
+              className="bg-white/5 border border-white/10 rounded-2xl p-6 text-center">
+              <div className="w-12 h-12 rounded-xl bg-orange/20 flex items-center justify-center text-orange mx-auto mb-4">{item.icon}</div>
+              <p className="text-orange text-xs font-bold mb-2">Step {item.step}</p>
+              <h3 className="text-white font-semibold text-base mb-2">{item.title}</h3>
+              <p className="text-white/50 text-sm">{item.desc}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+
     <div className="min-h-screen" style={{ backgroundColor: '#0f2a44' }}>
 
       {/* ── HERO ── */}
@@ -394,5 +481,44 @@ export default function ResumeToolPage() {
         )}
       </section>
     </div>
+
+    {/* ── FAQ ── */}
+    <section className="py-20 px-4 bg-light-grey">
+      <div className="max-w-3xl mx-auto">
+        <p className="text-center text-xs font-bold tracking-widest uppercase text-orange mb-3">FAQ</p>
+        <h2 className="text-center text-2xl md:text-3xl font-bold text-navy font-heading mb-10">Common questions</h2>
+        <div className="space-y-3">
+          {[
+            { q: 'Is this tool really free?', a: 'Yes, completely free. No hidden costs, no premium tiers. StepUp Futures CIC is a Community Interest Company — we reinvest everything back into helping young people.' },
+            { q: 'What file types can I upload?', a: 'We accept PDF and DOCX files up to 10MB. These are the two most common CV formats and cover 99% of cases.' },
+            { q: 'Will this work for UK jobs?', a: 'Yes. The tool is specifically calibrated for the UK job market — using UK ATS patterns, employer expectations, and industry-standard CV formatting guidelines.' },
+            { q: 'Does my CV get stored anywhere?', a: 'No. Your CV is processed in your browser session only. We do not store, share, or retain any CV data after your session ends.' },
+            { q: 'Can I use this more than once?', a: 'Yes — unlimited uses. Upload a new version of your CV at any time and run the analysis again to track your improvements.' },
+          ].map((item, i) => (
+            <FAQItem key={i} question={item.q} answer={item.a} />
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── HUMAN CTA ── */}
+    <section className="py-16 px-4 bg-white">
+      <div className="max-w-2xl mx-auto text-center">
+        <div className="w-12 h-12 rounded-xl bg-orange/10 flex items-center justify-center text-orange mx-auto mb-5">
+          <CheckCircle2 className="w-6 h-6" />
+        </div>
+        <h2 className="text-2xl md:text-3xl font-bold text-navy font-heading mb-3">Want a human to review your CV too?</h2>
+        <p className="text-navy/60 text-base leading-relaxed mb-7 max-w-lg mx-auto">
+          Our careers advisers at StepUp Futures can give you personalised feedback, coach you through applications, and help you land your next role — all for free.
+        </p>
+        <Link
+          to="/programmes"
+          className="inline-flex items-center gap-2 bg-orange text-white font-semibold px-7 py-3.5 rounded-xl hover:bg-orange/90 transition-colors"
+        >
+          Book a free session <ArrowRight className="w-4 h-4" />
+        </Link>
+      </div>
+    </section>
+    </>
   );
 }

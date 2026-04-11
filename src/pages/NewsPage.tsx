@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { Calendar, ArrowRight, Megaphone } from 'lucide-react';
 import { Button } from '../components/shared';
@@ -72,6 +73,14 @@ export default function NewsPage() {
   const rest = newsItems.filter(n => !n.featured);
 
   return (
+    <>
+    <Helmet>
+      <title>News | StepUp Futures CIC</title>
+      <meta name="description" content="Latest news and announcements from StepUp Futures CIC — new partnerships, programme launches, milestones, and community news from across the West Midlands." />
+      <meta property="og:title" content="News | StepUp Futures CIC" />
+      <meta property="og:description" content="Stay up to date with the latest from StepUp Futures CIC." />
+      <link rel="canonical" href="https://www.stepupfutures.org/news" />
+    </Helmet>
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 bg-navy text-white relative overflow-hidden">
@@ -144,11 +153,12 @@ export default function NewsPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-navy font-heading mb-4">Media Enquiries</h2>
           <p className="text-navy/60 mb-8 text-lg">For press enquiries, interview requests, or to be added to our media mailing list, please get in touch.</p>
-          <Button variant="primary" href="mailto:hello@stepupfutures.org" className="gap-2">
+          <Button variant="primary" href="mailto:info@stepupfutures.org" className="gap-2">
             Contact the Press Team <ArrowRight className="w-4 h-4" />
           </Button>
         </div>
       </section>
     </div>
+    </>
   );
 }

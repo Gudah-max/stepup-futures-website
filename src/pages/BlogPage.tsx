@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { Calendar, Clock, ArrowRight, Tag } from 'lucide-react';
 import { Button } from '../components/shared';
@@ -79,6 +80,14 @@ export default function BlogPage() {
   const rest = filtered.filter(p => !p.featured || activeCategory !== "All");
 
   return (
+    <>
+    <Helmet>
+      <title>Blog | StepUp Futures CIC</title>
+      <meta name="description" content="Expert insights on careers education, employability, and youth development — for educators, employers, and young people across the West Midlands." />
+      <meta property="og:title" content="Blog | StepUp Futures CIC" />
+      <meta property="og:description" content="Insights and resources from StepUp Futures CIC on careers education and youth employability." />
+      <link rel="canonical" href="https://www.stepupfutures.org/blog" />
+    </Helmet>
     <div className="pt-20">
       {/* Hero */}
       <section className="py-20 bg-navy text-white relative overflow-hidden">
@@ -179,5 +188,6 @@ export default function BlogPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -10,6 +11,12 @@ const Section = ({ title, children }: { title: string; children: React.ReactNode
 
 export default function PrivacyPage() {
   return (
+    <>
+    <Helmet>
+      <title>Privacy Policy | StepUp Futures CIC</title>
+      <meta name="description" content="StepUp Futures CIC privacy policy — how we collect, use, and protect your personal data in accordance with UK GDPR." />
+      <link rel="canonical" href="https://www.stepupfutures.org/privacy-policy" />
+    </Helmet>
     <div className="pt-20">
       <section className="py-20 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"><div className="absolute top-0 right-0 w-72 h-72 bg-orange rounded-full blur-[120px]" /></div>
@@ -29,7 +36,7 @@ export default function PrivacyPage() {
             <Section title="1. Who We Are">
               <p>StepUp Futures CIC ("we", "our", "us") is a Community Interest Company registered in England and Wales (Company Number: 13987644). Our registered address is in Coventry, West Midlands, United Kingdom.</p>
               <p>We operate the website at <strong>www.stepupfutures.org</strong> and provide careers education, employability training, and related services to schools, colleges, employers, and young people.</p>
-              <p>For data protection matters, our contact is: <a href="mailto:hello@stepupfutures.org" className="text-orange hover:underline">hello@stepupfutures.org</a></p>
+              <p>For data protection matters, our contact is: <a href="mailto:info@stepupfutures.org" className="text-orange hover:underline">info@stepupfutures.org</a></p>
             </Section>
 
             <Section title="2. What Personal Data We Collect">
@@ -94,7 +101,7 @@ export default function PrivacyPage() {
                 <li><strong>Data portability</strong> — receive your data in a structured, machine-readable format</li>
                 <li><strong>Withdraw consent</strong> at any time where processing is based on consent</li>
               </ul>
-              <p>To exercise any of these rights, please email us at <a href="mailto:hello@stepupfutures.org" className="text-orange hover:underline">hello@stepupfutures.org</a>. We will respond within 30 days.</p>
+              <p>To exercise any of these rights, please email us at <a href="mailto:info@stepupfutures.org" className="text-orange hover:underline">info@stepupfutures.org</a>. We will respond within 30 days.</p>
               <p>You also have the right to lodge a complaint with the <strong>Information Commissioner's Office (ICO)</strong> at <a href="https://www.ico.org.uk" target="_blank" rel="noopener noreferrer" className="text-orange hover:underline">www.ico.org.uk</a>.</p>
             </Section>
 
@@ -119,7 +126,7 @@ export default function PrivacyPage() {
               <address className="not-italic bg-light-grey rounded-2xl p-6 text-navy/80">
                 <strong>StepUp Futures CIC</strong><br />
                 Coventry, West Midlands, United Kingdom<br />
-                Email: <a href="mailto:hello@stepupfutures.org" className="text-orange hover:underline">hello@stepupfutures.org</a><br />
+                Email: <a href="mailto:info@stepupfutures.org" className="text-orange hover:underline">info@stepupfutures.org</a><br />
                 Phone: <a href="tel:+447506285601" className="text-orange hover:underline">07506 285601</a><br />
                 Company Number: 13987644
               </address>
@@ -129,5 +136,6 @@ export default function PrivacyPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

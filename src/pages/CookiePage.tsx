@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 
 const Section = ({ title, children }: { title: string; children: React.ReactNode }) => (
@@ -17,6 +18,12 @@ const cookieTable = [
 
 export default function CookiePage() {
   return (
+    <>
+    <Helmet>
+      <title>Cookie Policy | StepUp Futures CIC</title>
+      <meta name="description" content="StepUp Futures CIC cookie policy — what cookies we use, why, and how to manage your preferences." />
+      <link rel="canonical" href="https://www.stepupfutures.org/cookie-policy" />
+    </Helmet>
     <div className="pt-20">
       <section className="py-20 bg-navy text-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10"><div className="absolute top-0 left-0 w-72 h-72 bg-orange rounded-full blur-[120px]" /></div>
@@ -108,7 +115,7 @@ export default function CookiePage() {
               <p>If you have questions about our use of cookies, please contact us:</p>
               <address className="not-italic bg-light-grey rounded-2xl p-6 text-navy/80">
                 <strong>StepUp Futures CIC</strong><br />
-                Email: <a href="mailto:hello@stepupfutures.org" className="text-orange hover:underline">hello@stepupfutures.org</a><br />
+                Email: <a href="mailto:info@stepupfutures.org" className="text-orange hover:underline">info@stepupfutures.org</a><br />
                 Phone: <a href="tel:+447506285601" className="text-orange hover:underline">07506 285601</a>
               </address>
             </Section>
@@ -117,5 +124,6 @@ export default function CookiePage() {
         </div>
       </section>
     </div>
+    </>
   );
 }

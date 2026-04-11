@@ -1,4 +1,5 @@
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 import { motion } from 'motion/react';
 import { CheckCircle2, TrendingUp, Users, BookOpen, Building2, Award, ArrowRight } from 'lucide-react';
 import { SectionHeading, Button } from '../components/shared';
@@ -62,6 +63,14 @@ const caseStudies = [
 
 export default function ImpactPage() {
   return (
+    <>
+    <Helmet>
+      <title>Our Impact | StepUp Futures CIC</title>
+      <meta name="description" content="See the measurable impact of StepUp Futures CIC — 10,000+ young people guided, 50+ school partnerships, and real outcomes across the West Midlands since 2019." />
+      <meta property="og:title" content="Our Impact | StepUp Futures CIC" />
+      <meta property="og:description" content="Real outcomes for real young people. StepUp Futures CIC impact data and case studies." />
+      <link rel="canonical" href="https://www.stepupfutures.org/impact" />
+    </Helmet>
     <div className="pt-20">
       {/* Hero */}
       <section className="py-24 bg-navy text-white relative overflow-hidden">
@@ -179,5 +188,6 @@ export default function ImpactPage() {
         </div>
       </section>
     </div>
+    </>
   );
 }
