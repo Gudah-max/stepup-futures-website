@@ -648,7 +648,7 @@ const Contact = () => {
             <div className="space-y-6">
               <div className="flex items-start gap-4"><div className="w-12 h-12 bg-light-grey rounded-full flex items-center justify-center text-orange shrink-0"><Phone className="w-6 h-6" /></div><div><h4 className="font-bold text-navy mb-1">Phone</h4><a href="tel:+447506285601" className="text-navy/70 hover:text-orange transition-colors">07506 285601</a></div></div>
               <div className="flex items-start gap-4"><div className="w-12 h-12 bg-light-grey rounded-full flex items-center justify-center text-orange shrink-0"><MapPin className="w-6 h-6" /></div><div><h4 className="font-bold text-navy mb-1">Headquarters</h4><p className="text-navy/70">Coventry, West Midlands<br />United Kingdom</p></div></div>
-              <div className="flex items-start gap-4"><div className="w-12 h-12 bg-light-grey rounded-full flex items-center justify-center text-orange shrink-0"><Mail className="w-6 h-6" /></div><div><h4 className="font-bold text-navy mb-1">Email</h4><a href="mailto:hello@stepupfutures.org" className="text-navy/70 hover:text-orange transition-colors">hello@stepupfutures.org</a></div></div>
+              <div className="flex items-start gap-4"><div className="w-12 h-12 bg-light-grey rounded-full flex items-center justify-center text-orange shrink-0"><Mail className="w-6 h-6" /></div><div><h4 className="font-bold text-navy mb-1">Email</h4><a href="mailto:info@stepupfutures.org" className="text-navy/70 hover:text-orange transition-colors">info@stepupfutures.org</a></div></div>
             </div>
           </div>
           <div className="bg-light-grey p-8 rounded-3xl">

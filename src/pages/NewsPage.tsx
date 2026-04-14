@@ -144,7 +144,7 @@ export default function NewsPage() {
         <div className="max-w-3xl mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold text-navy font-heading mb-4">Media Enquiries</h2>
           <p className="text-navy/60 mb-8 text-lg">For press enquiries, interview requests, or to be added to our media mailing list, please get in touch.</p>
-          <Button variant="primary" href="mailto:hello@stepupfutures.org" className="gap-2">
+          <Button variant="primary" href="mailto:info@stepupfutures.org" className="gap-2">
             Contact the Press Team <ArrowRight className="w-4 h-4" />
           </Button>
         </div>

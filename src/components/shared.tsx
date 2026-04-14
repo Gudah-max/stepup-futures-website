@@ -208,7 +208,7 @@ export const Footer = ({ navigate }: { navigate: (p: string) => void }) => (
           <ul className="space-y-4">
             <li className="flex items-start gap-3 text-white/60"><MapPin className="w-5 h-5 text-orange shrink-0 mt-0.5" /><span>Coventry, West Midlands<br />United Kingdom</span></li>
             <li className="flex items-center gap-3 text-white/60"><Phone className="w-5 h-5 text-orange shrink-0" /><a href="tel:+447506285601" className="hover:text-orange transition-colors">07506 285601</a></li>
-            <li className="flex items-center gap-3 text-white/60"><Mail className="w-5 h-5 text-orange shrink-0" /><a href="mailto:hello@stepupfutures.org" className="hover:text-orange transition-colors">hello@stepupfutures.org</a></li>
+            <li className="flex items-center gap-3 text-white/60"><Mail className="w-5 h-5 text-orange shrink-0" /><a href="mailto:info@stepupfutures.org" className="hover:text-orange transition-colors">info@stepupfutures.org</a></li>
           </ul>
         </div>
       </div>

@@ -108,7 +108,7 @@ export default function CookiePage() {
               <p>If you have questions about our use of cookies, please contact us:</p>
               <address className="not-italic bg-light-grey rounded-2xl p-6 text-navy/80">
                 <strong>StepUp Futures CIC</strong><br />
-                Email: <a href="mailto:hello@stepupfutures.org" className="text-orange hover:underline">hello@stepupfutures.org</a><br />
+                Email: <a href="mailto:info@stepupfutures.org" className="text-orange hover:underline">info@stepupfutures.org</a><br />
                 Phone: <a href="tel:+447506285601" className="text-orange hover:underline">07506 285601</a>
               </address>
             </Section>
