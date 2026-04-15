@@ -416,7 +416,7 @@ const OurValuedPartners = () => {
     { name: "Partner 2", logo: "https://lh3.googleusercontent.com/pw/AP1GczNIKx3LW-Qpo43uYW1UPgGIoS-8-7eb5DLSLYdA_sTmSpKesh2AEAtM_3URWTs_MgBPn7FPyO14j1SWHzmuN5q6azPBtTLLvPIa9uptgvnh3Q2DVkab_hdLJz1sUAAE2BvvjgM0rQQeX0DemKbdFU_R=w511-h182-s-no-gm?authuser=0" },
     { name: "Baskerville School", logo: "https://lh3.googleusercontent.com/pw/AP1GczOU9yXF3U3Qn9dqjOGFRS65RzqDDQc5eKLC22SETlTEoTusDjiPy4c7MoKGCabByzUUN9XhhhJ55oBoJHPoZuLEYq5azi8C7LZ_TDd-f5heAl9uC9vZmDEN22-aI_ZTtCCW74PTvfps2f4GuPoTjH-_=w773-h749-s-no-gm?authuser=0" },
     { name: "New Partner 1", logo: "https://lh3.googleusercontent.com/pw/AP1GczOgREksU6LRAptIEwyhMlhwxVRSWr0ILO9cm6_mWlv6Z5eoGWSLXsYJIuWYNb3u8JcsBfPiEZ0oOnuI32Nf_OvE3-ku-As-Qrzg5BXVKA6rQl5lDh_J3h8cBZHqB742HQiD1lTD6KNyypU9h4LC8dqo=w1181-h800-s-no-gm?authuser=0" },
-    { name: "New Partner 2", logo: "https://lh3.googleusercontent.com/pw/AP1GczOQLkIgkjMfttVIkMHA1B8jRWKL6KufTgkNa5n7FthKYhp8gxgnePJvbtZEES2UkAFEoI8UKn-u4KR_gpQ60x4jWu9r2101QhM2eh-rUCFlik5jV81aBdEnpS9xz_Dm6hlk7lth8tDrBaIBOyok=w300-h138-s-no-gm?authuser=0" },
+    { name: "Red Snapper Group", logo: "/partner-redsnapper.png" },
   ];
   const dup = [...partners, ...partners, ...partners, ...partners];
   return (
